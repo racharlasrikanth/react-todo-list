@@ -10,7 +10,7 @@ const Alert = ({ message, type, setAlert }) => {
   }, []);
   
 
-  return <div className={`${type}`}>{message}</div>;
+  return <div className={`alert ${type}`}>{message}</div>;
 }
 
 export default Alert;

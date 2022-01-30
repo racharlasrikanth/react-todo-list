@@ -38,15 +38,27 @@ const App = () => {
     setAlert({ status:true, message:"Item Updated", type:"success" });
   }
 
+  const clearTodoList = () => {
+    setAlert({ status:true, message:"Items Deleted", type:"danger" });
+    setTodoList([]);
+  }
+
   return (
     <>
       <main>
-        <Title />
-        {
-          alert.status && <Alert setAlert={setAlert} message={alert.message} type={alert.type}/>
-        }
-        <Form formInput={formInput} setFormInput={setFormInput} submitHandler={submitHandler} isEditing={isEditing} updateTodo={updateTodo} setAlert={setAlert}/>
-        <TodoList todoList={todoList} deleteTodo={deleteTodo} updateTodo={updateTodo} setIsEditing={setIsEditing} setFormInput={setFormInput}/>
+        <div className="main-container">
+          <Title />
+          {
+            alert.status && <Alert setAlert={setAlert} message={alert.message} type={alert.type}/>
+          }
+          <Form formInput={formInput} setFormInput={setFormInput} submitHandler={submitHandler} isEditing={isEditing} updateTodo={updateTodo} setAlert={setAlert}/>
+          <TodoList todoList={todoList} deleteTodo={deleteTodo} updateTodo={updateTodo} setIsEditing={setIsEditing} setFormInput={setFormInput}/>
+          {
+            (todoList.length > 0) && <div className="clear-items">
+            <button className="clear-btn" onClick={clearTodoList}>clear todos</button>
+          </div>
+          }
+        </div>
       </main>
     </>
   );

@@ -41,9 +41,17 @@ Variables
   --ff-primary: "Lato", sans-serif;
   --transition: all 0.3s linear;
   --spacing: 0.25rem;
-  --radius: 0.5rem;
+  --radius: 0.2rem;
   --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  --fixed-width: 500px;
+  --max-width: 800px;
+  --clr-red-dark: rgb(126, 5, 5);
+  --clr-red-light: rgb(240, 180, 180);
+  --clr-yellow-dark: hsl(60, 95%, 33%);
+  --clr-yellow-light: hsl(60, 95%, 73%);
+  --clr-green-dark: hsl(125, 77%, 17%);
+  --clr-green-light: hsl(118, 63%, 79%);
 }
 /*
 =============== 
@@ -61,7 +69,7 @@ html {
 }
 body {
   font-family: var(--ff-primary);
-  background: var(--clr-white);
+  background: var(--clr-grey-10);
   color: var(--clr-grey-1);
   line-height: 1.5;
   font-size: 0.875rem;
@@ -179,3 +187,148 @@ p {
 Todolist styles
 ===============
 */
+main{
+  display: grid;
+  justify-items: center;
+  align-items: flex-start;
+  width: 90%;
+  min-height: 100vh;
+  margin-left: auto;
+  margin-right: auto;
+}
+.main-container{
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  background-color: var(--clr-white);
+  padding: 2rem 1rem;
+  border-radius: var(--radius);
+  box-shadow: var(--light-shadow);
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  max-width: 768px;
+}
+.title{
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.title .underline{
+  width: 6rem;
+  height: 3px;
+  background-color: var(--clr-primary-5);
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: var(--radius);
+}
+.alert{
+  text-align: center;
+  padding: .4rem .5rem;
+  border-radius: var(--radius);
+}
+.alert.success{
+  color: var(--clr-green-dark);
+  background-color: var(--clr-green-light);
+}
+.alert.danger{
+  color: var(--clr-red-dark);
+  background-color: var(--clr-red-light);
+}
+.form-container form{
+  display: grid;
+  grid-template-columns: 1fr auto;
+}
+.form-container .form-input, .form-container .submit-btn{
+  font-size: 1rem;
+  padding: .6rem .5rem;
+}
+.form-container .form-input{
+  background-color: var(--clr-grey-10);
+  border: 2px solid transparent;
+}
+.form-container .form-input:focus{
+  outline-color: var(--clr-primary-5);
+}
+.form-container .submit-btn{
+  text-transform: capitalize;
+  letter-spacing: var(--spacing);
+  background-color: var(--clr-primary-3);
+  color: var(--clr-white);
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: var(--transition);
+}
+.form-container .submit-btn:hover{
+  color: var(--clr-primary-1);
+  background-color: var(--clr-primary-7);
+}
+.form-container .submit-btn:focus{
+  outline-color: var(--clr-primary-4);
+}
+.todolist-container{
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+.todolist-container .todo{
+  background-color: var(--clr-grey-10);
+  padding: .7rem .5rem;
+  text-transform: capitalize;
+  border-radius: var(--radius);
+  box-shadow: var(--light-shadow);
+  transition: var(--transition);
+  display: grid;
+  grid-template-columns: 1fr auto;
+}
+.todolist-container .todo:hover{
+  box-shadow: var(--dark-shadow);
+}
+.todolist-container .todo .message{
+  font-size: 1rem;
+  letter-spacing: calc(var(--spacing) - 2px);
+}
+.todolist-container .todo .button-container{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+.todolist-container .todo .button-container button{
+  background: transparent;
+  border: transparent;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+.edit-btn{
+  color: green;
+  transition: var(--transition);
+}
+.edit-btn:hover{
+  color: var(--clr-green-dark);
+}
+.delete-btn{
+  color: red;
+  transition: var(--transition);
+}
+.delete-btn:hover{
+  color: var(--clr-red-dark);
+}
+.clear-items{
+  text-align: center;
+  margin-top: 1rem;
+}
+.clear-items .clear-btn{
+  padding: .4rem .5rem;
+  border-radius: var(--radius);
+  color: var(--clr-white);
+  letter-spacing: var(--spacing);
+  text-transform: capitalize;
+  cursor: pointer;
+  background: var(--clr-primary-3);
+  border: 2px solid transparent;
+  transition: var(--transition);
+}
+.clear-items .clear-btn:hover{
+  background: transparent;
+  color: red;
+  border-color: red;
+}
