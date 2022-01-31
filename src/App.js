@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Form from './components/Form';
 import TodoList from './components/TodoList';
 import Alert from './components/Alert';
@@ -42,6 +42,20 @@ const App = () => {
     setAlert({ status:true, message:"Items Deleted", type:"danger" });
     setTodoList([]);
   }
+
+  useEffect(() => {
+    if(localStorage.getItem("todoList")){
+      const newList = JSON.parse(localStorage.getItem("todoList"));
+      setTodoList(newList);
+      return;
+    }
+  }, []);
+  
+
+  useEffect(() => {
+    localStorage.setItem("todoList", JSON.stringify(todoList));
+  }, [todoList]);
+  
 
   return (
     <>
