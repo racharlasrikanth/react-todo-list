@@ -237,6 +237,9 @@ main{
 .form-container .form-input{
   background-color: var(--clr-grey-10);
   border: 2px solid transparent;
+  border-radius: 0px;
+  border-top-left-radius: var(--radius);
+  border-bottom-left-radius: var(--radius);
 }
 .form-container .form-input:focus{
   outline-color: var(--clr-primary-5);
@@ -249,6 +252,8 @@ main{
   border: 2px solid transparent;
   cursor: pointer;
   transition: var(--transition);
+  border-top-right-radius: var(--radius);
+  border-bottom-right-radius: var(--radius);
 }
 .form-container .submit-btn:hover{
   color: var(--clr-primary-1);
