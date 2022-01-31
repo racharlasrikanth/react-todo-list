@@ -173,7 +173,7 @@ p {
 .section-center {
   width: 90vw;
   margin: 0 auto;
-  max-width: 1170px;
+  max-width: 768px;
 }
 @media screen and (min-width: 992px) {
   .section-center {
@@ -191,13 +191,8 @@ main{
   display: grid;
   justify-items: center;
   align-items: flex-start;
-  width: 90%;
-  min-height: 100vh;
-  margin-left: auto;
-  margin-right: auto;
 }
 .main-container{
-  width: 100%;
   display: grid;
   grid-template-columns: 1fr;
   gap: 1rem;
@@ -205,9 +200,6 @@ main{
   padding: 2rem 1rem;
   border-radius: var(--radius);
   box-shadow: var(--light-shadow);
-  margin-top: 3rem;
-  margin-bottom: 3rem;
-  max-width: 768px;
 }
 .title{
   text-align: center;
@@ -279,6 +271,8 @@ main{
   transition: var(--transition);
   display: grid;
   grid-template-columns: 1fr auto;
+  justify-items: flex-start;
+  align-items: center;
 }
 .todolist-container .todo:hover{
   box-shadow: var(--dark-shadow);

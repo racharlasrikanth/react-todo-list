@@ -45,8 +45,8 @@ const App = () => {
 
   return (
     <>
-      <main>
-        <div className="main-container">
+      <main className='section'>
+        <div className="main-container section-center">
           <Title />
           {
             alert.status && <Alert setAlert={setAlert} message={alert.message} type={alert.type}/>
